@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graph-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graph-client
+  template:
+    metadata:
+      labels:
+        app: graph-client
+    spec:
+      containers:
+      - name: graph-client
+        image: devopslearningacr2025.azurecr.io/graph-client:v1
+        env:
+        - name: CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: graph-credentials
+              key: client-id
+        - name: CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: graph-credentials
+              key: client-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: graph-credentials
+type: Opaque
+stringData:
+  client-id: "YOUR_CLIENT_ID"
+  client-secret: "YOUR_CLIENT_SECRET"
