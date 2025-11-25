@@ -1,12 +1,15 @@
 from azure.identity import DeviceCodeCredential
 from msgraph import GraphServiceClient
 import asyncio
+import os
+
+client_id = os.getenv("CLIENT_ID")
 
 class PersonalGraphClient:
     def __init__(self):
         # For personal accounts, use device code flow
         self.credential = DeviceCodeCredential(
-            client_id="YOUR_CLIENT_ID",
+            client_id=client_id,
             tenant_id="consumers"  # For personal accounts
         )
         self.graph_client = GraphServiceClient(

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: graph-client
-        image: devopslearningacr2025.azurecr.io/graph-client:v1
+        image: devopslearningacr2025.azurecr.io/graph-client:v2
         env:
         - name: CLIENT_ID
           valueFrom:
