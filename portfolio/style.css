@@ -1,0 +1,32 @@
+:root {
+    --primary-color: #0078d4;
+    --text-color: #323130;
+    --bg-color: #faf9f8;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+.project {
+    background: white;
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.tech-stack {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 10px 0;
+}
